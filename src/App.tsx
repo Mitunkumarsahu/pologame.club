@@ -30,7 +30,7 @@ const App = () => {
 
 
       <div className="desktop">
-        <img src="./switch_to_polo_button.gif" alt="Switch to Polo.Game" className="switch-gif-for-desktop" />
+        <img src="./switch_to_polo_button.gif" alt="Switch to Polo.Game" className="switch-gif-for-desktop" onClick={() => window.location.href = "https://polo.game"} />
         <div className="website-container">
           {loading ? (
             <Spin size="large" />
@@ -50,7 +50,7 @@ const App = () => {
             </Row>
           )}
         </div>
-        <img src={'./whatsapp.png'} alt="whatsapp-icon" className="whatsapp-icon" />
+        <img src={'./whatsapp.png'} alt="whatsapp-icon" className="whatsapp-icon" onClick={() => window.open("https://api.whatsapp.com/send/?phone=9333333330&text=Hello%2C+I+would+like+to+connect+with+you%21&type=phone_number&app_absent=0", "_blank")} />
         <div className='images-container'>
           <img
             src={`./DMCA.png`}
@@ -76,7 +76,7 @@ const App = () => {
 
 
       <div className="mobile">
-        <img src="./switch_to_polo_button.gif" alt="Switch to Polo.Game" className="switch-gif" />
+        <img src="./switch_to_polo_button.gif" alt="Switch to Polo.Game" className="switch-gif" onClick={() => window.location.href = "https://polo.game"} />
         <div className="image-container">
           <Row gutter={[0, 0]}>
 
@@ -164,7 +164,7 @@ const App = () => {
           </Row>
         </div>
         <div className="mobile-footer">
-          <img src={'./whatsapp.png'} alt="whatsapp-icon" className="circular-icon-and-tagline" />
+          <img src={'./whatsapp.png'} alt="whatsapp-icon" className="circular-icon-and-tagline" onClick={() => window.open("https://api.whatsapp.com/send/?phone=9333333330&text=Hello%2C+I+would+like+to+connect+with+you%21&type=phone_number&app_absent=0", "_blank")} />
           <img src={'./tagline.png'} alt="tagline" className="circular-icon-and-tagline" />
           <img src={'./chat-support.png'} alt="chat-support" className="circular-icon-and-tagline" />
         </div>

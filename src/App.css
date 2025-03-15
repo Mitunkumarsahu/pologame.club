@@ -83,6 +83,7 @@
   bottom: 11%;
   left: 18%;
   height: 6.6dvw;
+  cursor: pointer;
 }
 
 .images{
@@ -95,6 +96,7 @@
 
 .chat-support{
   height: 6.6dvw;
+  cursor: pointer;
 }
 
 .desktop-footer-image{
