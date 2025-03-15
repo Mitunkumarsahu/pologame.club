@@ -11,7 +11,7 @@
 
 .desktop{
   display: block;
-  background: url("./desktop-bg.png") no-repeat center center;
+  background: url("/desktop-bg.png") no-repeat center center;
   background-size: cover;
   height: 100dvh;
   width: 100dvw;
@@ -131,7 +131,7 @@
 
 .mobile{
   display: none;
-  background: url("./mobile_bg.png") no-repeat center center;
+  background: url("/mobile_bg.png") no-repeat center center;
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -172,7 +172,7 @@
   justify-content: center;
   align-items: center;
   /* background-color: #031E25; */
-  background: url("./mobile-footer-image.png") no-repeat center center ;
+  background: url("/mobile-footer-image.png") no-repeat center center ;
   background-size: contain;
   height: 30vh;
   width: 100vw;
