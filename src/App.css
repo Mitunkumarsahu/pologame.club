@@ -12,7 +12,7 @@
 .desktop{
   display: block;
   background: url("./desktop-bg.png") no-repeat center center;
-  background-size: contain;
+  background-size: cover;
   height: 100dvh;
   width: 100dvw;
   background-color: #031E25;
@@ -81,19 +81,19 @@
   position: absolute;
   bottom: 11%;
   left: 18%;
-  height: 95px;
+  height: 6.6dvw;
 }
 
 .images{
-  height: 80px;
+  height: 5.5dvw;
 }
 
 .eighteen-plus{
-  height: 70px;
+  height: 4.8dvw;
 }
 
 .chat-support{
-  height: 95px;
+  height: 6.6dvw;
 }
 
 .desktop-footer-image{
@@ -101,6 +101,20 @@
   bottom: 0;
   left: 0;
   width: 100%;
+}
+
+
+
+@media screen and (min-width: 1500px) {
+  .desktop {
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .desktop {
+    background-size: contain;
+  }
 }
 
 
