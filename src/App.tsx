@@ -7,6 +7,7 @@ const App = () => {
   const BASEURL = import.meta.env.VITE_BASEURL;
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
+  const [screenHeight, setScreenHeight] = useState(window.innerHeight);
 
   const getApiData = async () => {
     try {
@@ -23,11 +24,17 @@ const App = () => {
 
   useEffect(() => {
     getApiData();
+
+    const updateHeight = () => {
+      setScreenHeight(window.innerHeight);
+    };
+
+    window.addEventListener('resize', updateHeight);
+    return () => window.removeEventListener('resize', updateHeight);
   }, []);
 
   return (
     <div className="App">
-
 
       <div className="desktop">
         <img src="./switch_to_polo_button.gif" alt="Switch to Polo.Game" className="switch-gif-for-desktop" onClick={() => window.location.href = "https://polo.game"} />
@@ -75,7 +82,7 @@ const App = () => {
       </div>
 
 
-      <div className="mobile">
+      <div className="mobile"  style={{ height: `${screenHeight}px` }}>
         <img src="./switch_to_polo_button.gif" alt="Switch to Polo.Game" className="switch-gif" onClick={() => window.location.href = "https://polo.game"} />
         <div className="image-container">
           <Row gutter={[0, 0]}>
