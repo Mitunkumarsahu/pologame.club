@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Spin, message, Row, Col } from "antd";
 import './App.css'
 import axios from "axios";
