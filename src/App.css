@@ -117,6 +117,12 @@
   }
 }
 
+@media screen and (width: 1440px) and (height: 900px) {
+  .desktop {
+    background-size: cover;
+  }
+}
+
 
 /* mobile */
 
