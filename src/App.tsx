@@ -27,10 +27,54 @@ const App = () => {
 
   return (
     <div className="App">
+
+
       <div className="desktop">
-        <h1>Desktop</h1>
-        <p>Resize the browser window to see the effect.</p>
+        <img src="./switch_to_polo_button.gif" alt="Switch to Polo.Game" className="switch-gif-for-desktop" />
+        <div className="website-container">
+          {loading ? (
+            <Spin size="large" />
+          ) : (
+            <Row gutter={[90, 90]} justify="center" align="middle">
+              {data.map((item, index) => (
+                <Col key={index} xs={24} sm={12} md={8} className="website-container-col">
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className='box'>
+                    <img
+                      src={`data:image/png;base64,${item.image_base64}`}
+                      alt={`Item ${index + 1}`}
+                      className="website-container-image"
+                    />
+                  </a>
+                </Col>
+              ))}
+            </Row>
+          )}
+        </div>
+        <img src={'./whatsapp.png'} alt="whatsapp-icon" className="whatsapp-icon" />
+        <div className='images-container'>
+          <img
+            src={`./DMCA.png`}
+            alt="DMCA"
+            className="images"
+          />
+          <img
+            src={`./100_Secure.png`}
+            alt="100% secure"
+            className="images"
+          />
+          <img
+            src={`./18+.png`}
+            alt="18+"
+            className="images eighteen-plus"
+          />
+          <img src={'./chat-support.png'} alt="chat-support" 
+          className="images chat-support"
+           />
+        </div>
+        {/* <img src={'./desktop-footer-image.png'} alt="desktop-footer-image" className="desktop-footer-image" /> */}
       </div>
+
+
       <div className="mobile">
         <img src="./switch_to_polo_button.gif" alt="Switch to Polo.Game" className="switch-gif" />
         <div className="image-container">
@@ -125,6 +169,8 @@ const App = () => {
           <img src={'./chat-support.png'} alt="chat-support" className="circular-icon-and-tagline" />
         </div>
       </div>
+
+
     </div>
   )
 }

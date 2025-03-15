@@ -7,10 +7,104 @@
   background-color: gold !important;
 }
 
+/* desktop */
 
 .desktop{
   display: block;
+  background: url("./desktop-bg.png") no-repeat center center;
+  background-size: contain;
+  height: 100dvh;
+  width: 100dvw;
+  background-color: #031E25;
+  position: relative;
 }
+
+.switch-gif-for-desktop{
+  width: 12%;
+  display: block;
+  position: absolute;
+  top: 39%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.website-container {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0;
+}
+
+.website-container-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.website-container-col:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -2px; 
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #497977, transparent); 
+}
+
+.website-container-image {
+  height: 12dvw; 
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+.website-container-image:hover {
+  transform: scale(1.1);
+}
+
+.images-container{
+  position: absolute;
+  right: 18%;
+  bottom: 11%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whatsapp-icon{
+  position: absolute;
+  bottom: 11%;
+  left: 18%;
+  height: 95px;
+}
+
+.images{
+  height: 80px;
+}
+
+.eighteen-plus{
+  height: 70px;
+}
+
+.chat-support{
+  height: 95px;
+}
+
+.desktop-footer-image{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+/* mobile */
 
 .mobile{
   display: none;
@@ -54,12 +148,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #031E25;
+  /* background-color: #031E25; */
+  background: url("./mobile-footer-image.png") no-repeat center center ;
+  background-size: contain;
+  height: 30vh;
+  width: 100vw;
+  z-index: 100;
 }
 
 .circular-icon-and-tagline{
   height: 80px;
   margin-top: 10px;
+  margin-bottom: -40%;
 }
 
 @media screen and (max-width: 540px){
@@ -77,5 +177,11 @@
   .mobile {
     background-size: contain; 
     background-position: center center;
+  }
+
+  .circular-icon-and-tagline{
+    height: 65px;
+    margin-top: 10px;
+    margin-bottom: -35%;
   }
 }
