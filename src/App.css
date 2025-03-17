@@ -12,7 +12,7 @@
 .desktop{
   display: block;
   background: url("/desktop-bg.png") no-repeat center center;
-  background-size: cover;
+  background-size: contain;
   height: 100dvh;
   width: 100dvw;
   background-color: #031E25;
