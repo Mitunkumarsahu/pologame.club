@@ -2,13 +2,16 @@ import { useEffect, useState } from 'react'
 import { Spin, message, Row, Col } from "antd";
 import './App.css'
 import axios from "axios";
+import ChatWidget from './chatWidget';
+import { toggleChat } from './redux/widgetSlice';
+import { useDispatch } from 'react-redux';
 
 const App = () => {
   const BASEURL = import.meta.env.VITE_BASEURL;
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const [screenHeight, setScreenHeight] = useState(window.innerHeight);
-
+  const dispatch = useDispatch();
   const getApiData = async () => {
     try {
       setLoading(true);
@@ -57,7 +60,7 @@ const App = () => {
             </Row>
           )}
         </div>
-        <img src={'./whatsapp.png'} alt="whatsapp-icon" className="whatsapp-icon" onClick={() => window.open("https://api.whatsapp.com/send/?phone=9333333330&text=Hello%2C+I+would+like+to+connect+with+you%21&type=phone_number&app_absent=0", "_blank")} />
+        <img src={'./whatsapp.png'} alt="whatsapp-icon" className="whatsapp-icon bounce-ani" onClick={() => window.open("https://api.whatsapp.com/send/?phone=9333333330&text=Hello%2C+I+would+like+to+connect+with+you%21&type=phone_number&app_absent=0", "_blank")} />
         <div className='images-container'>
           <img
             src={`./DMCA.png`}
@@ -75,7 +78,8 @@ const App = () => {
             className="images eighteen-plus"
           />
           <img src={'./chat-support.png'} alt="chat-support" 
-          className="images chat-support"
+          className="images chat-support bounce-ani"
+          onClick={() => dispatch(toggleChat())}
            />
         </div>
         {/* <img src={'./desktop-footer-image.png'} alt="desktop-footer-image" className="desktop-footer-image" /> */}
@@ -171,12 +175,12 @@ const App = () => {
           </Row>
         </div>
         <div className="mobile-footer">
-          <img src={'./whatsapp.png'} alt="whatsapp-icon" className="circular-icon-and-tagline" onClick={() => window.open("https://api.whatsapp.com/send/?phone=9333333330&text=Hello%2C+I+would+like+to+connect+with+you%21&type=phone_number&app_absent=0", "_blank")} />
+          <img src={'./whatsapp.png'} alt="whatsapp-icon" className="circular-icon-and-tagline bounce-ani" onClick={() => window.open("https://api.whatsapp.com/send/?phone=9333333330&text=Hello%2C+I+would+like+to+connect+with+you%21&type=phone_number&app_absent=0", "_blank")} />
           <img src={'./tagline.png'} alt="tagline" className="circular-icon-and-tagline" />
-          <img src={'./chat-support.png'} alt="chat-support" className="circular-icon-and-tagline" />
+          <img src={'./chat-support.png'}  onClick={() => dispatch(toggleChat())} alt="chat-support" className="circular-icon-and-tagline bounce-ani" />
         </div>
       </div>
-
+      {<ChatWidget></ChatWidget>}
 
     </div>
   )
